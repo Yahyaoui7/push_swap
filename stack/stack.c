@@ -1,52 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 11:19:39 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/11/30 11:20:37 by nyahyaou         ###   ########.fr       */
+/*   Created: 2025/11/30 11:13:57 by nyahyaou          #+#    #+#             */
+/*   Updated: 2025/12/10 17:56:13 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "stack.h"
 
-void	stack_free(t_stack *s)
+t_stack	*stack_init(void)
 {
-	t_node	*tmp;
+	t_stack	*s;
 
-	while (s->top)
-	{
-		tmp = s->top->next;
-		free(s->top);
-		s->top = tmp;
-	}
-	s->size = 0;
-}
-
-int	stack_is_sorted(t_stack *a)
-{
-	t_node	*cur;
-
-	cur = a->top;
-	while (cur && cur->next)
-	{
-		if (cur->value > cur->next->value)
-			return (0);
-		cur = cur->next;
-	}
-	return (1);
-}
-
-t_node	*stack_last(t_stack *s)
-{
-	t_node	*cur;
-
-	if (!s->top)
+	s = malloc(sizeof(t_stack));
+	if (!s)
 		return (NULL);
-	cur = s->top;
-	while (cur->next)
-		cur = cur->next;
-	return (cur);
+	s->top = NULL;
+	s->size = 0;
+	return (s);
 }
+
+
+t_node	*node_new(int value)
+{
+	t_node	*n;
+
+	n = malloc(sizeof(t_node));
+	if (!n)
+		return (NULL);
+	n->value = value;
+	n->next = NULL;
+	return (n);
+}
+
+void	stack_push_bottom(t_stack *s, t_node *node)
+{
+	t_node	*cur;
+
+	if (!node)
+		return ;
+	if (!s->top)
+		s->top = node;
+	else
+	{
+		cur = stack_last(s);
+		cur->next = node;
+	}
+	s->size++;
+}
+

@@ -6,30 +6,42 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 11:15:06 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/11/30 18:01:02 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/10 10:29:10 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "parsing.h"
 
-void	put_error_and_exit(void)
+int	is_only_spaces(char *str)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-int	is_space(char c)
+int	is_valid_number(char *str)
 {
-	return (c == ' ' || (c >= 9 && c <= 13));
-}
+	int	i;
 
-int	is_digit(char c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-void	check_digit(char c)
-{
-	if (!c || !is_digit(c))
-		put_error_and_exit();
+	i = 0;
+	if (!str || !str[0])
+		return (0);
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }

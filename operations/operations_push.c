@@ -6,11 +6,11 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 10:12:13 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/11/30 10:53:06 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:03:05 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "operations.h"
 
 static void	push(t_stack *from, t_stack *to)
 {
@@ -37,4 +37,3 @@ void	pb(t_stack *a, t_stack *b)
 	push(a, b);
 	write(1, "pb\n", 3);
 }
-

@@ -1,52 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_reverse_rotate.c                        :+:      :+:    :+:   */
+/*   operations_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 10:37:39 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/11/30 10:53:44 by nyahyaou         ###   ########.fr       */
+/*   Created: 2025/11/30 10:19:16 by nyahyaou          #+#    #+#             */
+/*   Updated: 2025/12/09 11:03:18 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "operations.h"
 
-static void	reverse_rotate(t_stack *s)
+static void	rotate(t_stack *s)
 {
-	t_node	*prev;
+	t_node	*first;
 	t_node	*last;
 
 	if (s->size < 2)
 		return ;
-	prev = NULL;
+	first = s->top;
+	s->top = first->next;
+	first->next = NULL;
 	last = s->top;
 	while (last->next)
-	{
-		prev = last;
 		last = last->next;
-	}
-	prev->next = NULL;
-	last->next = s->top;
-	s->top = last;
+	last->next = first;
 }
 
-void	rra(t_stack *a)
+void	ra(t_stack *a)
 {
-	reverse_rotate(a);
-	write(1, "rra\n", 4);
+	rotate(a);
+	write(1, "ra\n", 3);
 }
 
-void	rrb(t_stack *b)
+void	rb(t_stack *b)
 {
-	reverse_rotate(b);
-	write(1, "rrb\n", 4);
+	rotate(b);
+	write(1, "rb\n", 3);
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b)
 {
-	reverse_rotate(a);
-	reverse_rotate(b);
-	write(1, "rrr\n", 4);
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }
-

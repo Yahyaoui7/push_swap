@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sorting.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 10:06:30 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/10 11:34:22 by nyahyaou         ###   ########.fr       */
+/*   Created: 2025/12/10 11:17:52 by nyahyaou          #+#    #+#             */
+/*   Updated: 2025/12/10 11:42:47 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef SORTING_H
+# define SORTING_H
 
-# include "operations/operations.h"
-# include "parsing/parsing.h"
-# include "sorting/sorting.h"
+# include "../operations/operations.h"
+# include "../stack/stack.h"
+
+void	sort_2(t_stack *a);
+void	sort_3(t_stack *a);
+void	sort_4(t_stack *a, t_stack *b);
+void	sort_5(t_stack *a, t_stack *b);
+void	small_sort(t_stack *a, t_stack *b);
+
+int		find_min_position(t_stack *a);
 
 #endif

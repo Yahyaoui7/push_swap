@@ -6,11 +6,11 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 18:36:56 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/11/30 10:53:18 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:02:47 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "operations.h"
 
 static void	swap(t_stack *s)
 {
@@ -44,4 +44,3 @@ void	ss(t_stack *a, t_stack *b)
 	swap(b);
 	write(1, "ss\n", 3);
 }
-
