@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 11:19:39 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/09 14:29:12 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/11 22:20:58 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	stack_free(t_stack *s)
 	}
 	free(s);
 }
-
-
 
 int	stack_is_sorted(t_stack *a)
 {

@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:16:17 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/10 11:40:49 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/11 22:21:08 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	sort_3(t_stack *a)
 	else if (x < y && y > z && x > z)
 		rra(a);
 }
-
 
 void	sort_4(t_stack *a, t_stack *b)
 {

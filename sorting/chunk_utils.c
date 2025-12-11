@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:11:09 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/11 18:19:50 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/11 22:18:32 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,25 +52,27 @@ int	find_best_position(t_stack *stack, int min_idx, int max_idx)
 	return (pos_top <= pos_bottom);
 }
 
-void	push_chunk_to_b(t_stack *a, t_stack *b, int min_idx, int max_idx)
+void	push_chunk_to_b(t_stack *a, t_stack *b, int chunk)
 {
 	int	pushed;
-	int	chunk_len;
 
-	chunk_len = max_idx - min_idx + 1;
 	pushed = 0;
-	while (pushed < chunk_len && a->size > 0)
+	while (a->top)
 	{
-		if (a->top->index >= min_idx && a->top->index <= max_idx)
+		if (a->top->index <= pushed)
+		{
+			pb(a, b);
+			rb(b);
+			pushed++;
+		}
+		else if (a->top->index > pushed && a->top->index <= pushed + chunk)
 		{
 			pb(a, b);
 			pushed++;
-			if (b->top->index < min_idx + (chunk_len / 2))
-				rb(b);
 		}
 		else
 		{
-			if (find_best_position(a, min_idx, max_idx))
+			if (find_best_position(a, pushed, pushed + chunk))
 				ra(a);
 			else
 				rra(a);

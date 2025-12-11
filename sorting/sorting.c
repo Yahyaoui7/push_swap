@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:27:57 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/11 17:40:07 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/11 18:47:16 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	sorting(t_stack *a, t_stack *b)
 {
 	int	size;
 
+	if (stack_is_sorted(a))
+		return ;
 	size = a->size;
 	if (size == 2)
 		sort_2(a);
