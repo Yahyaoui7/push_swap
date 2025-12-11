@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 11:13:57 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/10 17:56:13 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/10 20:36:16 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_stack	*stack_init(void)
 	return (s);
 }
 
-
 t_node	*node_new(int value)
 {
 	t_node	*n;
@@ -33,6 +32,7 @@ t_node	*node_new(int value)
 	if (!n)
 		return (NULL);
 	n->value = value;
+	n->index = -1;
 	n->next = NULL;
 	return (n);
 }
@@ -52,4 +52,3 @@ void	stack_push_bottom(t_stack *s, t_node *node)
 	}
 	s->size++;
 }
-

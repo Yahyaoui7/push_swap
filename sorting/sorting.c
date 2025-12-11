@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:27:57 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/10 19:08:08 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/11 17:40:07 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,15 @@ int	find_min_position(t_stack *a)
 	return (pos);
 }
 
-void	small_sort(t_stack *a, t_stack *b)
+void	sort_big(t_stack *a, t_stack *b)
+{
+	chunk_sort(a, b);
+}
+
+void	sorting(t_stack *a, t_stack *b)
 {
 	int	size;
 
-	if (stack_is_sorted(a))
-		return ;
 	size = a->size;
 	if (size == 2)
 		sort_2(a);
@@ -49,6 +52,8 @@ void	small_sort(t_stack *a, t_stack *b)
 		sort_3(a);
 	else if (size == 4)
 		sort_4(a, b);
-	else if (size == 5)
+	else if (size <= 5)
 		sort_5(a, b);
+	else
+		sort_big(a, b);
 }
