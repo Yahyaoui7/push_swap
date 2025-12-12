@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:27:57 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/12 11:08:19 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 20:04:37 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int	find_min_position(t_stack *a)
 	}
 	return (pos);
 }
-
-
 
 void	sorting(t_stack *a, t_stack *b)
 {

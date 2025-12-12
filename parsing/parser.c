@@ -6,13 +6,11 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 11:12:55 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/12 17:38:49 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 20:04:21 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
-
-
 
 int	parse_numbers(char **numbers, t_stack *a)
 {
@@ -62,4 +60,3 @@ int	parse_arguments(int argc, char **argv, t_stack *stack)
 	}
 	return (1);
 }
-
