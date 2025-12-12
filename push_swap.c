@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 11:12:21 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/11 22:22:42 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:01:53 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,10 @@ int	main(int ac, char **av)
 		return (0);
 	a = stack_init();
 	b = stack_init();
-	if (!a || !b)
+	if (!a || !b || !parse_arguments(ac, av, a))
 	{
-		stack_free(a);
-		stack_free(b);
-		return (1);
-	}
-	if (!parse_arguments(ac, av, a))
-	{
-		print_error();
+		if (!parse_arguments(ac, av, a))
+			print_error();
 		stack_free(a);
 		stack_free(b);
 		return (1);

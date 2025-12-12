@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:18:18 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/10 11:05:37 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:05:58 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ long	ft_atoi_long(const char *str);
 char	**ft_split(char const *s, char c);
 void	free_split(char **split);
 int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
 
 void	print_error(void);
 

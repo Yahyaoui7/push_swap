@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:10:50 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/10 10:44:45 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:05:17 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ long	ft_atoi_long(const char *str)
 			sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(str[i]))
 	{
 		result = result * 10 + (str[i] - '0');
 		i++;
@@ -40,16 +40,6 @@ long	ft_atoi_long(const char *str)
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
 }
 
 void	free_split(char **split)

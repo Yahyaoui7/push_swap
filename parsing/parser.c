@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 11:12:55 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/10 20:36:21 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:04:19 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,5 @@ void	print_error(void)
 	char	*arr;
 
 	arr = "Error\n";
-	write(2, arr, ft_strlen(arr));
+	write(2, arr, 6);
 }
