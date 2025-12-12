@@ -6,11 +6,16 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:10:50 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/12 11:05:17 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 17:38:55 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
+
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
 
 long	ft_atoi_long(const char *str)
 {
@@ -37,11 +42,6 @@ long	ft_atoi_long(const char *str)
 	return (result * sign);
 }
 
-int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
-
 void	free_split(char **split)
 {
 	int	i;
@@ -55,4 +55,12 @@ void	free_split(char **split)
 		i++;
 	}
 	free(split);
+}
+
+void	print_error(void)
+{
+	char	*arr;
+
+	arr = "Error\n";
+	write(2, arr, 6);
 }

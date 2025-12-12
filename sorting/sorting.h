@@ -24,7 +24,6 @@ void	sort_5(t_stack *a, t_stack *b);
 
 void	chunk_sort(t_stack *a, t_stack *b);
 void	push_chunk_to_b(t_stack *a, t_stack *b, int chunk);
-int		find_max_position(t_stack *stack);
 void	push_back_to_a(t_stack *a, t_stack *b);
 
 void	sorting(t_stack *a, t_stack *b);

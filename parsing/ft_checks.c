@@ -6,7 +6,7 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 11:15:06 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/10 10:29:10 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 17:37:33 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,20 @@ int	is_valid_number(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int	has_duplicate(t_stack *stack, int value)
+{
+	t_node	*cur;
+
+	if (!stack)
+		return (0);
+	cur = stack->top;
+	while (cur)
+	{
+		if (cur->value == value)
+			return (1);
+		cur = cur->next;
+	}
+	return (0);
 }
