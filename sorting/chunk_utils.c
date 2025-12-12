@@ -6,51 +6,11 @@
 /*   By: nyahyaou <nyahyaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:11:09 by nyahyaou          #+#    #+#             */
-/*   Updated: 2025/12/11 22:18:32 by nyahyaou         ###   ########.fr       */
+/*   Updated: 2025/12/12 11:35:56 by nyahyaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sorting.h"
-
-int	find_index_position(t_stack *stack, int min_idx, int max_idx)
-{
-	int		pos;
-	t_node	*tmp;
-
-	pos = 0;
-	tmp = stack->top;
-	while (tmp)
-	{
-		if (tmp->index >= min_idx && tmp->index <= max_idx)
-			return (pos);
-		pos++;
-		tmp = tmp->next;
-	}
-	return (-1);
-}
-
-int	find_best_position(t_stack *stack, int min_idx, int max_idx)
-{
-	int		pos_top;
-	int		size;
-	int		pos_bottom;
-	t_node	*tmp;
-
-	pos_top = 0;
-	tmp = stack->top;
-	size = stack->size;
-	while (tmp)
-	{
-		if (tmp->index >= min_idx && tmp->index <= max_idx)
-			break ;
-		pos_top++;
-		tmp = tmp->next;
-	}
-	if (!tmp)
-		return (1);
-	pos_bottom = size - pos_top;
-	return (pos_top <= pos_bottom);
-}
 
 void	push_chunk_to_b(t_stack *a, t_stack *b, int chunk)
 {
@@ -71,12 +31,7 @@ void	push_chunk_to_b(t_stack *a, t_stack *b, int chunk)
 			pushed++;
 		}
 		else
-		{
-			if (find_best_position(a, pushed, pushed + chunk))
-				ra(a);
-			else
-				rra(a);
-		}
+			ra(a);
 	}
 }
 
