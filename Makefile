@@ -1,11 +1,8 @@
 
 NAME        = push_swap
-CC          = gcc
+CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 
-INC = push_swap.h operations/operations.h \
-		parsing/parsing.h stack/stack.h \
-		sorting/sorting.h
 
 SRC_MAIN    = push_swap.c
 
@@ -35,7 +32,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS)  $(OBJS) -o $(NAME)
 
-%.o: %.c $(INC)
+%.o: %.c 
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
